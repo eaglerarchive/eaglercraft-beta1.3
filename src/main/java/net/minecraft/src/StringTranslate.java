@@ -1,0 +1,43 @@
+package net.minecraft.src;
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) braces deadcode 
+
+import java.io.IOException;
+import java.util.Properties;
+
+import net.lax1dude.eaglercraft.EaglerAdapter;
+
+public class StringTranslate {
+
+	private StringTranslate() {
+		translateTable = new Properties();
+		try {
+			translateTable.load(EaglerAdapter.loadResource("/lang/en_US.lang"));
+		} catch (IOException ioexception) {
+			ioexception.printStackTrace();
+		}
+	}
+
+	public static StringTranslate getInstance() {
+		return instance;
+	}
+
+	public String translateKey(String s) {
+		return translateTable.getProperty(s, s);
+	}
+
+	public String translateKeyFormat(String s, Object aobj[]) {
+		String s1 = translateTable.getProperty(s, s);
+		return String.format(s1, aobj);
+	}
+
+	public String translateNamedKey(String s) {
+		return translateTable.getProperty((new StringBuilder()).append(s).append(".name").toString(), "");
+	}
+
+	private static StringTranslate instance = new StringTranslate();
+	private Properties translateTable;
+
+}

@@ -1,0 +1,16 @@
+.gradle
+.settings
+build
+bin
+/eaglercraftbungee/bin
+/eaglercraftbungee/rundir
+/epkcompiler/bin
+/eaglercraftbungee/rundir
+/lwjgl-rundir/_eagstorage*
+/lwjgl-rundir/lwjgl_saves
+/lwjgl-rundir/filesystem
+/lwjgl-rundir/texturepacks
+/lwjgl-rundir/downloads
+/lwjgl-rundir/options.txt
+/bukkit/rundir*
+/bukkit/server/craftbukkit-src/*
